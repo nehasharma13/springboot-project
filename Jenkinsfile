@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/<your-username>/<repo>.git'
+               git 'https://github.com/nehasharma13/springboot-project.git'
             }
         }
 

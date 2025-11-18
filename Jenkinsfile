@@ -10,7 +10,11 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-               git 'https://github.com/nehasharma13/springboot-project.git'
+                deleteDir() // ensure clean workspace
+        checkout([$class: 'GitSCM',
+                  branches: [[name: 'main']],
+                  userRemoteConfigs: [[url: 'https://github.com/nehasharma13/springboot-project.git']]
+        ])
             }
         }
 
